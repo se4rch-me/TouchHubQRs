@@ -3,8 +3,8 @@
     {
       "id": "logo",
       "description": "Touch Center Logo",
-      "imageUrl": "/qr-pago.png",
-      "imageHint": "logo"
+      "imageUrl": "/logo.png",
+      "imageHint": "company logo"
     },
     {
       "id": "qr-nequi",
