@@ -3,19 +3,19 @@
     {
       "id": "logo",
       "description": "Touch Center Logo",
-      "imageUrl": "https://images.unsplash.com/photo-1760037028517-e5cc6e3ebd3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtaW5pbWFsaXN0JTIwbG9nb3xlbnwwfHx8fDE3NzE1MTkwMjd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "minimalist logo"
+      "imageUrl": "https://images.unsplash.com/photo-1626682561113-d1db402cc866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxxciUyMGNvZGV8ZW58MHx8fHwxNzcxNTA4OTE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "qr code"
     },
     {
       "id": "qr-nequi",
       "description": "Nequi QR Code",
-      "imageUrl": "https://images.unsplash.com/photo-1662383729882-e03ce8e00887?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxxciUyMGNvZGV8ZW58MHx8fHwxNzcxNTA4OTE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1626682561113-d1db402cc866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxxciUyMGNvZGV8ZW58MHx8fHwxNzcxNTA4OTE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "qr code"
     },
     {
       "id": "qr-daviplata",
       "description": "Daviplata QR Code",
-      "imageUrl": "https://images.unsplash.com/photo-1629128625414-374a9e16d56a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cXIlMjBjb2RlfGVufDB8fHx8MTc3MTUwODkxNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1626682561113-d1db402cc866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxxciUyMGNvZGV8ZW58MHx8fHwxNzcxNTA4OTE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "qr code"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "qr-bank-cesar",
       "description": "Bank Account QR Cesar",
-      "imageUrl": "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxxciUyMGNvZGV8ZW58MHx8fHwxNzcxNTA4OTE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1626682561113-d1db402cc866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxxciUyMGNvZGV8ZW58MHx8fHwxNzcxNTA4OTE2fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "qr code"
     }
   ]

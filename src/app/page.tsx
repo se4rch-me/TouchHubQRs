@@ -48,7 +48,7 @@ export default function Home() {
         />
 
         <PaymentCard
-          title="Bancos Elizabeth"
+          title="Bancolombia"
           subtitle="Touch Center"
           bankName="Bancolombia"
           accountType="Ahorros"
@@ -58,10 +58,10 @@ export default function Home() {
         />
 
         <PaymentCard
-          title="Pagos Cesar"
+          title="Davivienda"
           subtitle="Touch Center"
           bankName="Davivienda"
-          accountType="Corriente"
+          accountType="Ahorros"
           accountNumber="987-654321-09"
           qrUrl={getPlaceholder("qr-bank-cesar")}
           delay="0.4s"
