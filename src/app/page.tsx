@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import { PaymentCard } from "@/components/payment-card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -35,7 +34,7 @@ export default function Home() {
         <PaymentCard
           title="Nequi"
           subtitle="Escanea para pagar"
-          accountNumber="300 123 4567"
+          accountNumber="3114970176"
           qrUrl={getPlaceholder("qr-nequi")}
           delay="0.1s"
         />
@@ -43,7 +42,7 @@ export default function Home() {
         <PaymentCard
           title="Daviplata"
           subtitle="Escanea para pagar"
-          accountNumber="300 987 6543"
+          accountNumber="3114970176"
           qrUrl={getPlaceholder("qr-daviplata")}
           delay="0.2s"
         />
