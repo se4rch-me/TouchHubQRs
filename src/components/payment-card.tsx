@@ -2,7 +2,7 @@
 "use client";
 
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { CopyButton } from "@/components/copy-button";
 import { cn } from "@/lib/utils";
 
@@ -30,53 +30,56 @@ export function PaymentCard({
   return (
     <Card 
       className={cn(
-        "border-none shadow-lg rounded-2xl overflow-hidden fade-in bg-white",
+        "border-none shadow-lg rounded-2xl overflow-hidden fade-in bg-white flex flex-col sm:flex-row items-center p-6 gap-6",
         className
       )}
       style={{ animationDelay: delay }}
     >
-      <CardHeader className="pb-2 space-y-1">
-        <CardTitle className="text-xl font-semibold tracking-tight text-foreground">
-          {title}
-        </CardTitle>
-        {subtitle && (
-          <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
-        )}
-      </CardHeader>
-      <CardContent className="space-y-6">
-        <div className="relative aspect-square w-full max-w-[240px] mx-auto bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex items-center justify-center p-2 group transition-all">
-          <Image
-            src={qrUrl}
-            alt={`${title} QR Code`}
-            width={400}
-            height={400}
-            className="rounded-lg object-contain w-full h-full drop-shadow-md"
-            data-ai-hint="qr code"
-          />
+      {/* QR Section */}
+      <div className="relative shrink-0 w-32 h-32 sm:w-40 sm:h-40 bg-gray-50 rounded-xl border-2 border-dashed border-gray-200 flex items-center justify-center p-1">
+        <Image
+          src={qrUrl}
+          alt={`${title} QR Code`}
+          width={200}
+          height={200}
+          className="rounded-lg object-contain w-full h-full drop-shadow-sm"
+          data-ai-hint="qr code"
+        />
+      </div>
+      
+      {/* Info Section */}
+      <div className="flex-1 w-full space-y-4">
+        <div>
+          <h3 className="text-xl font-bold tracking-tight text-foreground">
+            {title}
+          </h3>
+          {subtitle && (
+            <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
+          )}
         </div>
-        
-        <div className="space-y-3 bg-gray-50 p-4 rounded-xl">
+
+        <div className="grid grid-cols-1 gap-2 bg-gray-50 p-4 rounded-xl">
           {bankName && (
-            <div className="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
+            <div className="flex justify-between items-center text-sm border-b border-gray-200/50 pb-2">
               <span className="text-muted-foreground">Banco</span>
               <span className="font-semibold">{bankName}</span>
             </div>
           )}
           {accountType && (
-            <div className="flex justify-between items-center text-sm border-b border-gray-200 pb-2">
+            <div className="flex justify-between items-center text-sm border-b border-gray-200/50 pb-2">
               <span className="text-muted-foreground">Tipo</span>
               <span className="font-semibold">{accountType}</span>
             </div>
           )}
-          <div className="flex flex-col space-y-2 pt-1">
-            <span className="text-xs uppercase tracking-wider text-muted-foreground font-bold">Número de Cuenta / Celular</span>
+          <div className="flex flex-col space-y-1 pt-1">
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">Número de Cuenta / Celular</span>
             <div className="flex items-center justify-between">
-              <span className="text-lg font-mono font-bold tracking-tight">{accountNumber}</span>
+              <span className="text-lg font-mono font-bold tracking-tighter text-foreground">{accountNumber}</span>
               <CopyButton value={accountNumber} />
             </div>
           </div>
         </div>
-      </CardContent>
+      </div>
     </Card>
   );
 }

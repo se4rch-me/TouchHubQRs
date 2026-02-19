@@ -12,7 +12,7 @@ export default function Home() {
       {/* Header Section */}
       <header className="w-full max-w-4xl text-center mb-12 space-y-4 fade-in">
         <div className="flex justify-center mb-6">
-          <div className="relative w-64 h-24">
+          <div className="relative w-72 h-32">
             <Image
               src={getPlaceholder("logo")}
               alt="Touch Center Logo"
@@ -31,8 +31,8 @@ export default function Home() {
         </p>
       </header>
 
-      {/* Payment Grid - Optimized for iPad (2 columns) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+      {/* Payment List - Vertical layout */}
+      <div className="flex flex-col gap-6 w-full max-w-3xl">
         <PaymentCard
           title="Nequi"
           subtitle="Escanea para pagar"
@@ -41,15 +41,13 @@ export default function Home() {
           delay="0.1s"
         />
         
-        <div className="md:contents">
-          <PaymentCard
-            title="Daviplata"
-            subtitle="Escanea para pagar"
-            accountNumber="3114970176"
-            qrUrl={getPlaceholder("qr-daviplata")}
-            delay="0.2s"
-          />
-        </div>
+        <PaymentCard
+          title="Daviplata"
+          subtitle="Escanea para pagar"
+          accountNumber="3114970176"
+          qrUrl={getPlaceholder("qr-daviplata")}
+          delay="0.2s"
+        />
 
         <PaymentCard
           title="Bancolombia"
