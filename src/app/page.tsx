@@ -17,7 +17,7 @@ export default function Home() {
               src={getPlaceholder("logo")}
               alt="Touch Center Logo"
               fill
-              className="object-contain drop-shadow-lg"
+              className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]"
               priority
               data-ai-hint="company logo"
             />
@@ -41,13 +41,15 @@ export default function Home() {
           delay="0.1s"
         />
         
-        <PaymentCard
-          title="Daviplata"
-          subtitle="Escanea para pagar"
-          accountNumber="3114970176"
-          qrUrl={getPlaceholder("qr-daviplata")}
-          delay="0.2s"
-        />
+        <div className="md:contents">
+          <PaymentCard
+            title="Daviplata"
+            subtitle="Escanea para pagar"
+            accountNumber="3114970176"
+            qrUrl={getPlaceholder("qr-daviplata")}
+            delay="0.2s"
+          />
+        </div>
 
         <PaymentCard
           title="Bancolombia"
