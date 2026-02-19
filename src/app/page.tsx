@@ -1,10 +1,11 @@
+
 import Image from "next/image";
 import { PaymentCard } from "@/components/payment-card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Home() {
   const getPlaceholder = (id: string) => 
-    PlaceHolderImages.find((img) => img.id === id)?.imageUrl || "";
+    PlaceHolderImages.find((img) => img.id === id)?.imageUrl || "/qr-pago.png";
 
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12">
@@ -17,7 +18,7 @@ export default function Home() {
               alt="Touch Center Logo"
               fill
               className="object-cover"
-              data-ai-hint="minimalist logo"
+              data-ai-hint="logo"
             />
           </div>
         </div>
