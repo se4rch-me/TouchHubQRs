@@ -12,12 +12,12 @@ export default function Home() {
       {/* Header Section */}
       <header className="w-full max-w-4xl text-center mb-12 space-y-4 fade-in">
         <div className="flex justify-center mb-6">
-          <div className="relative w-64 h-24 overflow-hidden">
+          <div className="relative w-64 h-24">
             <Image
               src={getPlaceholder("logo")}
               alt="Touch Center Logo"
               fill
-              className="object-contain"
+              className="object-contain drop-shadow-lg"
               priority
               data-ai-hint="company logo"
             />

@@ -50,7 +50,7 @@ export function PaymentCard({
             alt={`${title} QR Code`}
             width={400}
             height={400}
-            className="rounded-lg object-contain w-full h-full"
+            className="rounded-lg object-contain w-full h-full drop-shadow-md"
             data-ai-hint="qr code"
           />
         </div>
