@@ -141,7 +141,7 @@ export default function Home() {
               src={getPlaceholder("logo")}
               alt="Touch Center Logo"
               fill
-              className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]"
+              className="object-contain drop-shadow-[0_15px_30px_rgba(255,255,255,0.1)]"
               priority
               data-ai-hint="company logo"
             />
@@ -162,7 +162,7 @@ export default function Home() {
             variant="outline" 
             size="icon" 
             onClick={handleBack} 
-            className="rounded-full h-12 w-12 border-gray-200 shadow-sm shrink-0"
+            className="rounded-full h-12 w-12 border-muted shadow-sm shrink-0 bg-card hover:bg-muted"
           >
             <ArrowLeft className="h-6 w-6" />
           </Button>
@@ -292,10 +292,10 @@ export default function Home() {
               qrUrl={selectedItem.qrUrl}
               bankName={selectedItem.bankName}
               accountType={selectedItem.accountType}
-              className="w-full shadow-2xl border-2 border-primary/10 p-8"
+              className="w-full shadow-2xl border-primary/10 p-8"
             />
             
-            <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl text-center">
+            <div className="bg-primary/10 border border-primary/20 p-6 rounded-2xl text-center">
               <p className="text-sm text-primary font-semibold">
                 {selectedItem.type === 'payment' && "IMPORTANTE: Envía el comprobante por WhatsApp para validar tu transacción."}
                 {selectedItem.type === 'social' && "¡Síguenos para estar al tanto de todas nuestras novedades y promociones!"}
@@ -308,7 +308,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-16 text-center text-muted-foreground opacity-50 text-sm fade-in" style={{ animationDelay: '0.6s' }}>
+      <footer className="mt-16 text-center text-muted-foreground opacity-40 text-sm fade-in" style={{ animationDelay: '0.6s' }}>
         <p>© {new Date().getFullYear()} Touch Center Hub</p>
         <p className="mt-1">Servicios y Pagos</p>
       </footer>
@@ -319,10 +319,10 @@ export default function Home() {
 function MenuCard({ title, subtitle, icon, onClick, className }: { title: string, subtitle: string, icon: React.ReactNode, onClick: () => void, className?: string }) {
   return (
     <Card 
-      className={`p-8 flex flex-col items-center justify-center gap-6 hover:shadow-2xl transition-all cursor-pointer border-2 hover:border-primary/50 group bg-white rounded-3xl ${className}`}
+      className={`p-8 flex flex-col items-center justify-center gap-6 hover:shadow-2xl transition-all cursor-pointer border-none hover:ring-2 hover:ring-primary/50 group bg-card rounded-3xl ${className}`}
       onClick={onClick}
     >
-      <div className="p-5 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+      <div className="p-5 rounded-full bg-muted text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
         {icon}
       </div>
       <div className="text-center">
@@ -336,11 +336,11 @@ function MenuCard({ title, subtitle, icon, onClick, className }: { title: string
 function ListEntryCard({ title, subtitle, icon, onClick }: { title: string, subtitle: string, icon: React.ReactNode, onClick: () => void }) {
   return (
     <Card 
-      className="p-6 flex items-center justify-between hover:shadow-lg transition-all cursor-pointer border-2 hover:border-primary/50 group bg-white rounded-2xl"
+      className="p-6 flex items-center justify-between hover:shadow-lg transition-all cursor-pointer border-none hover:ring-1 hover:ring-primary/30 group bg-card rounded-2xl"
       onClick={onClick}
     >
       <div className="flex items-center gap-6">
-        <div className="p-4 rounded-full bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white transition-all">
+        <div className="p-4 rounded-full bg-muted text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
           {icon}
         </div>
         <div>
