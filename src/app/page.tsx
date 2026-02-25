@@ -135,24 +135,18 @@ export default function Home() {
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12">
       {/* Header Section */}
       <header className="w-full max-w-4xl text-center mb-12 space-y-4 fade-in">
-        <div className="flex justify-center mb-6">
-          <div className="relative w-72 h-32">
+        <div className="flex justify-center">
+          <div className="relative w-80 h-40">
             <Image
               src={getPlaceholder("logo")}
               alt="Touch Center Logo"
               fill
-              className="object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)]"
+              className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.3)]"
               priority
               data-ai-hint="company logo"
             />
           </div>
         </div>
-        <h1 className="text-4xl font-bold tracking-tight text-foreground">
-          Touch Center
-        </h1>
-        <p className="text-xl text-muted-foreground font-light">
-          Punto de Atención y Pago
-        </p>
       </header>
 
       {/* Navigation and Title */}
@@ -295,7 +289,7 @@ export default function Home() {
               className="w-full shadow-xl border border-muted p-8"
             />
             
-            <div className="bg-primary/5 border border-primary/20 p-6 rounded-2xl text-center">
+            <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl text-center">
               <p className="text-sm text-primary font-semibold">
                 {selectedItem.type === 'payment' && "IMPORTANTE: Envía el comprobante por WhatsApp para validar tu transacción."}
                 {selectedItem.type === 'social' && "¡Síguenos para estar al tanto de todas nuestras novedades y promociones!"}
