@@ -29,6 +29,36 @@
       "description": "Bank Account QR Cesar",
       "imageUrl": "/qr-pago.png",
       "imageHint": "qr code"
+    },
+    {
+      "id": "qr-instagram",
+      "description": "Instagram QR Code",
+      "imageUrl": "/qr-pago.png",
+      "imageHint": "qr code"
+    },
+    {
+      "id": "qr-facebook",
+      "description": "Facebook QR Code",
+      "imageUrl": "/qr-pago.png",
+      "imageHint": "qr code"
+    },
+    {
+      "id": "qr-whatsapp",
+      "description": "WhatsApp QR Code",
+      "imageUrl": "/qr-pago.png",
+      "imageHint": "qr code"
+    },
+    {
+      "id": "qr-google",
+      "description": "Google Review QR Code",
+      "imageUrl": "/qr-pago.png",
+      "imageHint": "qr code"
+    },
+    {
+      "id": "qr-wifi",
+      "description": "WiFi QR Code",
+      "imageUrl": "/qr-pago.png",
+      "imageHint": "qr code"
     }
   ]
 }
