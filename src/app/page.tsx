@@ -47,7 +47,7 @@ export default function Home() {
       title: 'Nequi',
       subtitle: 'Escanea para pagar con Nequi',
       accountNumber: '3114970176',
-      qrUrl: getPlaceholder("qr-nequi"),
+      qrUrl: "/qr-pago.png",
       type: 'payment'
     },
     {
@@ -55,7 +55,7 @@ export default function Home() {
       title: 'Daviplata',
       subtitle: 'Escanea para pagar con Daviplata',
       accountNumber: '3114970176',
-      qrUrl: getPlaceholder("qr-daviplata"),
+      qrUrl: "/qr-pago.png",
       type: 'payment'
     }
   ];
@@ -68,7 +68,7 @@ export default function Home() {
       bankName: 'Bancolombia',
       accountType: 'Ahorros',
       accountNumber: '123-456789-01',
-      qrUrl: getPlaceholder("qr-bank-elizabeth"),
+      qrUrl: "/qr-pago.png",
       type: 'payment'
     },
     {
@@ -78,7 +78,7 @@ export default function Home() {
       bankName: 'Davivienda',
       accountType: 'Ahorros',
       accountNumber: '987-654321-09',
-      qrUrl: getPlaceholder("qr-bank-cesar"),
+      qrUrl: "/qr-pago.png",
       type: 'payment'
     }
   ];
@@ -89,7 +89,7 @@ export default function Home() {
       title: 'Instagram',
       subtitle: 'Síguenos en Instagram',
       infoLabel: '@touchcenter',
-      qrUrl: getPlaceholder("qr-instagram"),
+      qrUrl: "/qr-pago.png",
       type: 'social'
     },
     {
@@ -97,7 +97,7 @@ export default function Home() {
       title: 'Facebook',
       subtitle: 'Visita nuestro perfil',
       infoLabel: 'Touch Center Oficial',
-      qrUrl: getPlaceholder("qr-facebook"),
+      qrUrl: "/qr-pago.png",
       type: 'social'
     },
     {
@@ -105,7 +105,7 @@ export default function Home() {
       title: 'WhatsApp',
       subtitle: 'Escríbenos directamente',
       infoLabel: 'Atención al Cliente',
-      qrUrl: getPlaceholder("qr-whatsapp"),
+      qrUrl: "/qr-pago.png",
       type: 'social'
     }
   ];
@@ -133,15 +133,15 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12">
-      {/* Header Section */}
-      <header className="w-full max-w-4xl text-center mb-12 space-y-4 fade-in">
+      {/* Header Section - Logo only */}
+      <header className="w-full max-w-4xl text-center mb-12 fade-in">
         <div className="flex justify-center">
           <div className="relative w-80 h-40">
             <Image
-              src={getPlaceholder("logo")}
+              src="/logo.png"
               alt="Touch Center Logo"
               fill
-              className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.3)]"
+              className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]"
               priority
               data-ai-hint="company logo"
             />
@@ -205,7 +205,7 @@ export default function Home() {
                 id: 'google-rate',
                 title: 'Calificarnos en Google',
                 subtitle: 'Tu opinión es muy importante',
-                qrUrl: getPlaceholder("qr-google"),
+                qrUrl: "/qr-pago.png",
                 type: 'rate',
                 infoLabel: 'Google Maps'
               })} 
@@ -219,7 +219,7 @@ export default function Home() {
                 id: 'wifi-connect',
                 title: 'Conectar al WiFi',
                 subtitle: 'Escanea para conectarte automáticamente',
-                qrUrl: getPlaceholder("qr-wifi"),
+                qrUrl: "/qr-pago.png",
                 type: 'wifi',
                 infoLabel: 'Red: TouchCenter_Guest'
               })} 
@@ -289,8 +289,8 @@ export default function Home() {
               className="w-full shadow-xl border border-muted p-8"
             />
             
-            <div className="bg-primary/5 border border-primary/10 p-6 rounded-2xl text-center">
-              <p className="text-sm text-primary font-semibold">
+            <div className="bg-muted/50 border border-muted p-6 rounded-2xl text-center">
+              <p className="text-sm text-muted-foreground font-semibold">
                 {selectedItem.type === 'payment' && "IMPORTANTE: Envía el comprobante por WhatsApp para validar tu transacción."}
                 {selectedItem.type === 'social' && "¡Síguenos para estar al tanto de todas nuestras novedades y promociones!"}
                 {selectedItem.type === 'rate' && "¡Gracias por tu apoyo! Nos ayuda a seguir mejorando para ti."}
@@ -342,7 +342,7 @@ function ListEntryCard({ title, subtitle, icon, onClick }: { title: string, subt
           <p className="text-sm text-muted-foreground">{subtitle}</p>
         </div>
       </div>
-      <div className="text-primary font-bold flex items-center gap-2">
+      <div className="text-muted-foreground font-bold flex items-center gap-2 group-hover:text-primary transition-colors">
         Ver <span className="text-2xl">›</span>
       </div>
     </Card>
