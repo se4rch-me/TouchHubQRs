@@ -38,9 +38,6 @@ export default function Home() {
   const [view, setView] = useState<ViewState>('main');
   const [selectedItem, setSelectedItem] = useState<ItemEntry | null>(null);
 
-  const getPlaceholder = (id: string) => 
-    PlaceHolderImages.find((img) => img.id === id)?.imageUrl || "/qr-pago.png";
-
   const walletMethods: ItemEntry[] = [
     {
       id: 'nequi',
@@ -133,7 +130,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12">
-      {/* Header Section - Logo only */}
+      {/* Header Section */}
       <header className="w-full max-w-4xl text-center mb-12 fade-in">
         <div className="flex justify-center">
           <div className="relative w-80 h-40">
@@ -146,6 +143,10 @@ export default function Home() {
               data-ai-hint="company logo"
             />
           </div>
+        </div>
+        <div className="mt-4 space-y-2">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground">Touch Center</h1>
+          <p className="text-lg text-muted-foreground font-medium">Punto de Atención y Pago</p>
         </div>
       </header>
 
@@ -316,7 +317,7 @@ function MenuCard({ title, subtitle, icon, onClick, className }: { title: string
       className={`p-8 flex flex-col items-center justify-center gap-6 hover:shadow-xl transition-all cursor-pointer border-muted hover:border-primary/50 group bg-card rounded-3xl ${className}`}
       onClick={onClick}
     >
-      <div className="p-5 rounded-full bg-muted text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+      <div className="p-5 rounded-full bg-muted text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
         {icon}
       </div>
       <div className="text-center">
@@ -334,7 +335,7 @@ function ListEntryCard({ title, subtitle, icon, onClick }: { title: string, subt
       onClick={onClick}
     >
       <div className="flex items-center gap-6">
-        <div className="p-4 rounded-full bg-muted text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+        <div className="p-4 rounded-full bg-muted text-muted-foreground group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
           {icon}
         </div>
         <div>
