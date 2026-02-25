@@ -141,7 +141,7 @@ export default function Home() {
               src={getPlaceholder("logo")}
               alt="Touch Center Logo"
               fill
-              className="object-contain drop-shadow-[0_15px_30px_rgba(255,255,255,0.1)]"
+              className="object-contain drop-shadow-[0_10px_20px_rgba(0,0,0,0.15)]"
               priority
               data-ai-hint="company logo"
             />
@@ -292,10 +292,10 @@ export default function Home() {
               qrUrl={selectedItem.qrUrl}
               bankName={selectedItem.bankName}
               accountType={selectedItem.accountType}
-              className="w-full shadow-2xl border-primary/10 p-8"
+              className="w-full shadow-xl border border-muted p-8"
             />
             
-            <div className="bg-primary/10 border border-primary/20 p-6 rounded-2xl text-center">
+            <div className="bg-primary/5 border border-primary/20 p-6 rounded-2xl text-center">
               <p className="text-sm text-primary font-semibold">
                 {selectedItem.type === 'payment' && "IMPORTANTE: Envía el comprobante por WhatsApp para validar tu transacción."}
                 {selectedItem.type === 'social' && "¡Síguenos para estar al tanto de todas nuestras novedades y promociones!"}
@@ -319,7 +319,7 @@ export default function Home() {
 function MenuCard({ title, subtitle, icon, onClick, className }: { title: string, subtitle: string, icon: React.ReactNode, onClick: () => void, className?: string }) {
   return (
     <Card 
-      className={`p-8 flex flex-col items-center justify-center gap-6 hover:shadow-2xl transition-all cursor-pointer border-none hover:ring-2 hover:ring-primary/50 group bg-card rounded-3xl ${className}`}
+      className={`p-8 flex flex-col items-center justify-center gap-6 hover:shadow-xl transition-all cursor-pointer border-muted hover:border-primary/50 group bg-card rounded-3xl ${className}`}
       onClick={onClick}
     >
       <div className="p-5 rounded-full bg-muted text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
@@ -336,7 +336,7 @@ function MenuCard({ title, subtitle, icon, onClick, className }: { title: string
 function ListEntryCard({ title, subtitle, icon, onClick }: { title: string, subtitle: string, icon: React.ReactNode, onClick: () => void }) {
   return (
     <Card 
-      className="p-6 flex items-center justify-between hover:shadow-lg transition-all cursor-pointer border-none hover:ring-1 hover:ring-primary/30 group bg-card rounded-2xl"
+      className="p-6 flex items-center justify-between hover:shadow-md transition-all cursor-pointer border-muted hover:border-primary/30 group bg-card rounded-2xl"
       onClick={onClick}
     >
       <div className="flex items-center gap-6">
