@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -9,6 +10,7 @@ interface PaymentCardProps {
   title: string;
   subtitle?: string;
   accountNumber: string;
+  accountLabel?: string;
   qrUrl: string;
   bankName?: string;
   accountType?: string;
@@ -20,6 +22,7 @@ export function PaymentCard({
   title,
   subtitle,
   accountNumber,
+  accountLabel = "Número de Cuenta",
   qrUrl,
   bankName,
   accountType,
@@ -71,7 +74,7 @@ export function PaymentCard({
             </div>
           )}
           <div className="flex flex-col space-y-1 pt-1">
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">Número de Cuenta / Celular</span>
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">{accountLabel}</span>
             <div className="flex items-center justify-between">
               <span className="text-lg font-mono font-bold tracking-tighter text-foreground">{accountNumber}</span>
               <CopyButton value={accountNumber} />

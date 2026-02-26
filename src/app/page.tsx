@@ -32,6 +32,7 @@ interface ItemEntry {
   accountType?: string;
   type: 'payment' | 'social' | 'wifi' | 'rate';
   infoLabel?: string;
+  accountLabel?: string;
 }
 
 export default function Home() {
@@ -40,7 +41,6 @@ export default function Home() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
-    // Evitar errores de hidratación para el año del footer
     setCurrentYear(new Date().getFullYear());
   }, []);
 
@@ -91,9 +91,10 @@ export default function Home() {
       id: 'instagram',
       title: 'Instagram',
       subtitle: 'Síguenos en Instagram',
-      infoLabel: '@touchcenter',
-      qrUrl: "/qr-pago.png",
-      type: 'social'
+      infoLabel: '@touch_center284',
+      qrUrl: "/qr-instagram.png",
+      type: 'social',
+      accountLabel: 'Usuario'
     },
     {
       id: 'facebook',
@@ -101,7 +102,8 @@ export default function Home() {
       subtitle: 'Visita nuestro perfil',
       infoLabel: 'Touch Center Oficial',
       qrUrl: "/qr-pago.png",
-      type: 'social'
+      type: 'social',
+      accountLabel: 'Perfil'
     },
     {
       id: 'whatsapp',
@@ -109,7 +111,8 @@ export default function Home() {
       subtitle: 'Escríbenos directamente',
       infoLabel: 'Atención al Cliente',
       qrUrl: "/qr-pago.png",
-      type: 'social'
+      type: 'social',
+      accountLabel: 'Contacto'
     }
   ];
 
@@ -135,8 +138,8 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12">
-      {/* Header Section - Texto eliminado por petición del usuario, solo queda el logo */}
+    <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12 text-foreground">
+      {/* Header Section */}
       <header className="w-full max-w-4xl text-center mb-12 fade-in">
         <div className="flex justify-center">
           <div className="relative w-80 h-40">
@@ -207,9 +210,10 @@ export default function Home() {
                 id: 'google-rate',
                 title: 'Calificarnos en Google',
                 subtitle: 'Tu opinión es muy importante',
-                qrUrl: "/qr-pago.png",
+                qrUrl: "/touchShare.png",
                 type: 'rate',
-                infoLabel: 'Google Maps'
+                infoLabel: 'Puntuar',
+                accountLabel: 'Acción'
               })} 
             />
             <MenuCard 
@@ -223,7 +227,8 @@ export default function Home() {
                 subtitle: 'Escanea para conectarte',
                 qrUrl: "/qr-pago.png",
                 type: 'wifi',
-                infoLabel: 'Red: TouchCenter_Guest'
+                infoLabel: 'TouchCenter_Guest',
+                accountLabel: 'Red'
               })} 
             />
           </div>
@@ -261,6 +266,7 @@ export default function Home() {
               title={selectedItem.title}
               subtitle={selectedItem.subtitle}
               accountNumber={selectedItem.accountNumber || selectedItem.infoLabel || ''}
+              accountLabel={selectedItem.accountLabel}
               qrUrl={selectedItem.qrUrl}
               bankName={selectedItem.bankName}
               accountType={selectedItem.accountType}

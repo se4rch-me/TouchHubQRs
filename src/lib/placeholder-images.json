@@ -33,7 +33,7 @@
     {
       "id": "qr-instagram",
       "description": "Instagram QR Code",
-      "imageUrl": "/qr-pago.png",
+      "imageUrl": "/qr-instagram.png",
       "imageHint": "qr code"
     },
     {
@@ -51,7 +51,7 @@
     {
       "id": "qr-google",
       "description": "Google Review QR Code",
-      "imageUrl": "/qr-pago.png",
+      "imageUrl": "/touchShare.png",
       "imageHint": "qr code"
     },
     {
