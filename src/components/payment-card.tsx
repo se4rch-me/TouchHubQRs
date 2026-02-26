@@ -77,8 +77,10 @@ export function PaymentCard({
           <div className="flex flex-col space-y-2 pt-2">
             <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-black">{accountLabel}</span>
             <div className="flex items-center justify-between gap-4 bg-card/80 p-4 rounded-2xl border border-muted/30">
-              <span className="text-2xl font-mono font-black tracking-tighter text-foreground break-all text-left flex-1">{accountNumber}</span>
-              <CopyButton value={accountNumber} />
+              <span className="text-xl sm:text-2xl font-mono font-black tracking-tighter text-foreground break-words text-left flex-1">
+                {accountNumber}
+              </span>
+              <CopyButton value={accountNumber} className="shrink-0" />
             </div>
           </div>
         </div>
