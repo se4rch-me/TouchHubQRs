@@ -57,7 +57,7 @@
     {
       "id": "qr-wifi",
       "description": "WiFi QR Code",
-      "imageUrl": "/qr-pago.png",
+      "imageUrl": "/Wifi.png",
       "imageHint": "qr code"
     }
   ]

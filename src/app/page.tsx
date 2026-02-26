@@ -229,7 +229,7 @@ export default function Home() {
                 id: 'wifi-connect',
                 title: 'Conectar al WiFi',
                 subtitle: 'Escanea para conectarte',
-                qrUrl: "/qr-pago.png",
+                qrUrl: "/Wifi.png",
                 type: 'wifi',
                 infoLabel: 'TouchCenter_Guest',
                 accountLabel: 'Red WiFi'
