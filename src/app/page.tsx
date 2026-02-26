@@ -33,6 +33,7 @@ interface ItemEntry {
   type: 'payment' | 'social' | 'wifi' | 'rate';
   infoLabel?: string;
   accountLabel?: string;
+  redirectUrl?: string;
 }
 
 export default function Home() {
@@ -95,7 +96,7 @@ export default function Home() {
       id: 'instagram',
       title: 'Instagram',
       subtitle: 'Síguenos en Instagram',
-      infoLabel: '@touch_center284',
+      infoLabel: 'touch_center284',
       qrUrl: "/qr-instagram.png",
       type: 'social',
       accountLabel: 'Usuario'
@@ -113,7 +114,7 @@ export default function Home() {
       id: 'whatsapp',
       title: 'WhatsApp',
       subtitle: 'Escríbenos directamente',
-      infoLabel: '311 4970176',
+      infoLabel: '+57 3114970176',
       qrUrl: "/qr-pago.png",
       type: 'social',
       accountLabel: 'Contacto'
@@ -216,8 +217,9 @@ export default function Home() {
                 subtitle: 'Tu opinión es muy importante',
                 qrUrl: "/touchShare.png",
                 type: 'rate',
-                infoLabel: 'Calificar Ahora',
-                accountLabel: 'Puntuar'
+                infoLabel: 'Opiniones',
+                accountLabel: 'Puntuar',
+                redirectUrl: 'https://www.google.com/search?sca_esv=4743879a97d795b6&q=opiniones+de+touchcenter&uds=ALYpb_kH5N_kfrB-KsEDOaDf3REQS_SDa6jCnm7uV6ILGyPSXnmxSdBJAbJBE9m3em0etOvQgDtWXWGRj8nGrTguwalEMSwL_f-QBW1a9Daour5SvZt9WXK-UM8gZCtrXSQaEcOlwrrQzb97tZkblgJLK0naPqmg4a2nJty74R3HPGsf42aCZrnk7Bgmi85lDgmqR2ecQIVso5BWFwSIwB3HJyxQJCQMdFLVXKjcKtwJF-6_ESR6vA8d7xspWlK4wuvpE_0WUm-uDgbJSwQBaFdiirl_pobhz3uULEjwp_szewIHmz4XI8ZmFu3wP3Iw-lLbZToQnufAvynl73bWW4u4ck7mohlaEG3DFtCH-bh_Hr-iqF5aEvtxgZmFE5uVVtJmTZWRA7zwg_STtFnOd2nY6lr3Xh6YBpl40WiEB8N01-ZV1rPefEk&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZDEKSgCV8e2CxGyNbpXVn5ydgJ-K6_MF9nbat174rM4XlkM7dgn_225G-3_aMD-WAkSSgiixqwLiBEdLHayUS_qHbmkWYW7KHkfDTaSO-vUWLC__g%3D%3D&sa=X&ved=2ahUKEwi-mLfl1PWSAxWvVzABHakLJM4Qk8gLegQIFhAB&ictx=1&biw=384&bih=693&dpr=1.88'
               })} 
             />
             <MenuCard 
@@ -231,7 +233,7 @@ export default function Home() {
                 subtitle: 'Escanea para conectarte',
                 qrUrl: "/Wifi.png",
                 type: 'wifi',
-                infoLabel: 'TouchCenter_Guest',
+                infoLabel: 'center284',
                 accountLabel: 'Red WiFi'
               })} 
             />
@@ -274,6 +276,7 @@ export default function Home() {
               qrUrl={selectedItem.qrUrl}
               bankName={selectedItem.bankName}
               accountType={selectedItem.accountType}
+              actionUrl={selectedItem.redirectUrl}
               className="w-full"
             />
             <div className="bg-muted/40 border border-muted p-6 rounded-[2rem] text-center shadow-sm">

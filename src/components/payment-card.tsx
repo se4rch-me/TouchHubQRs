@@ -4,6 +4,8 @@
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { CopyButton } from "@/components/copy-button";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface PaymentCardProps {
@@ -16,6 +18,8 @@ interface PaymentCardProps {
   accountType?: string;
   delay?: string;
   className?: string;
+  actionUrl?: string;
+  actionLabel?: string;
 }
 
 export function PaymentCard({
@@ -28,6 +32,8 @@ export function PaymentCard({
   accountType,
   delay = "0s",
   className,
+  actionUrl,
+  actionLabel = "Ir",
 }: PaymentCardProps) {
   return (
     <Card 
@@ -82,7 +88,17 @@ export function PaymentCard({
                   {accountNumber}
                 </span>
               </div>
-              <CopyButton value={accountNumber} className="shrink-0" />
+              {actionUrl ? (
+                <Button 
+                  onClick={() => window.open(actionUrl, '_blank')}
+                  className="shrink-0 h-8 px-4 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 gap-2"
+                >
+                  <ExternalLink className="h-3 w-3" />
+                  <span className="text-xs font-medium">{actionLabel}</span>
+                </Button>
+              ) : (
+                <CopyButton value={accountNumber} className="shrink-0" />
+              )}
             </div>
           </div>
         </div>
