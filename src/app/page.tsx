@@ -139,7 +139,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12 text-foreground">
-      {/* Header Section */}
+      {/* Header Section - Logo only */}
       <header className="w-full max-w-4xl text-center mb-12 fade-in">
         <div className="flex justify-center">
           <div className="relative w-80 h-40">
@@ -163,17 +163,17 @@ export default function Home() {
             onClick={handleBack} 
             className="rounded-full h-12 w-12 border-muted shadow-sm shrink-0 bg-card hover:bg-muted"
           >
-            <ArrowLeft className="h-6 w-6" />
+            <ArrowLeft className="h-6 w-6 text-muted-foreground" />
           </Button>
           <div>
-            <h2 className="text-2xl font-bold text-foreground/90">
+            <h2 className="text-2xl font-bold text-foreground/90 leading-tight">
               {view === 'wallets' && 'Billeteras Digitales'}
               {view === 'banks' && 'Cuentas Bancarias'}
               {view === 'social' && 'Nuestras Redes'}
               {view === 'detail' && selectedItem?.title}
             </h2>
-            <p className="text-sm text-muted-foreground">
-              {view === 'detail' ? 'Información completa' : 'Selecciona una opción'}
+            <p className="text-sm text-muted-foreground font-medium">
+              {view === 'detail' ? 'Escanea el código QR' : 'Selecciona una opción'}
             </p>
           </div>
         </div>
@@ -261,7 +261,7 @@ export default function Home() {
 
         {/* VIEW: DETAIL */}
         {view === 'detail' && selectedItem && (
-          <div className="fade-in space-y-6">
+          <div className="fade-in space-y-8">
             <PaymentCard
               title={selectedItem.title}
               subtitle={selectedItem.subtitle}
@@ -270,10 +270,10 @@ export default function Home() {
               qrUrl={selectedItem.qrUrl}
               bankName={selectedItem.bankName}
               accountType={selectedItem.accountType}
-              className="w-full shadow-xl border border-muted p-8"
+              className="w-full"
             />
-            <div className="bg-muted/30 border border-muted p-6 rounded-3xl text-center">
-              <p className="text-sm text-muted-foreground font-medium">
+            <div className="bg-muted/40 border border-muted p-6 rounded-[2rem] text-center shadow-sm">
+              <p className="text-base text-muted-foreground font-semibold">
                 {selectedItem.type === 'payment' && "Envía el comprobante por WhatsApp para validar tu pago."}
                 {selectedItem.type === 'social' && "¡Síguenos y entérate de nuestras promociones!"}
                 {selectedItem.type === 'rate' && "Tu opinión nos ayuda a brindarte un mejor servicio."}
@@ -285,7 +285,7 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-16 text-center text-muted-foreground/50 text-xs fade-in" style={{ animationDelay: '0.4s' }}>
+      <footer className="mt-16 text-center text-muted-foreground/60 text-sm fade-in" style={{ animationDelay: '0.4s' }}>
         <p>© {currentYear ?? '2024'} Touch Center Hub • Servicios y Pagos</p>
       </footer>
     </main>
@@ -295,15 +295,15 @@ export default function Home() {
 function MenuCard({ title, subtitle, icon, onClick, className }: { title: string, subtitle: string, icon: React.ReactNode, onClick: () => void, className?: string }) {
   return (
     <Card 
-      className={`p-10 flex flex-col items-center justify-center gap-6 hover:shadow-xl transition-all duration-300 cursor-pointer border-muted bg-card rounded-[2.5rem] group ${className}`}
+      className={`p-10 flex flex-col items-center justify-center gap-6 hover:shadow-2xl transition-all duration-300 cursor-pointer border-muted bg-card rounded-[2.5rem] group ${className}`}
       onClick={onClick}
     >
-      <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center text-muted-foreground/60 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+      <div className="w-24 h-24 rounded-full bg-muted flex items-center justify-center text-muted-foreground/50 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm">
         {icon}
       </div>
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-foreground/70 group-hover:text-foreground/90 transition-colors">{title}</h2>
-        <p className="text-muted-foreground mt-1 font-medium">{subtitle}</p>
+        <h2 className="text-2xl font-bold text-foreground/80 group-hover:text-foreground transition-colors">{title}</h2>
+        <p className="text-muted-foreground mt-1 font-semibold">{subtitle}</p>
       </div>
     </Card>
   );
@@ -312,19 +312,19 @@ function MenuCard({ title, subtitle, icon, onClick, className }: { title: string
 function ListEntryCard({ title, subtitle, icon, onClick }: { title: string, subtitle: string, icon: React.ReactNode, onClick: () => void }) {
   return (
     <Card 
-      className="p-6 flex items-center justify-between hover:shadow-lg transition-all duration-300 cursor-pointer border-muted bg-card rounded-3xl group"
+      className="p-6 flex items-center justify-between hover:shadow-xl transition-all duration-300 cursor-pointer border-muted bg-card rounded-3xl group"
       onClick={onClick}
     >
       <div className="flex items-center gap-6">
-        <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center text-muted-foreground/60 group-hover:bg-accent group-hover:text-white transition-all duration-300">
+        <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center text-muted-foreground/50 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm">
           {icon}
         </div>
         <div>
-          <h3 className="text-xl font-bold text-foreground/70 group-hover:text-foreground/90 transition-colors">{title}</h3>
-          <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
+          <h3 className="text-xl font-bold text-foreground/80 group-hover:text-foreground transition-colors">{title}</h3>
+          <p className="text-sm text-muted-foreground font-semibold">{subtitle}</p>
         </div>
       </div>
-      <div className="text-muted-foreground/40 font-black text-2xl group-hover:text-accent transition-colors mr-2">
+      <div className="text-muted-foreground/30 font-black text-3xl group-hover:text-accent group-hover:translate-x-1 transition-all mr-2">
         ›
       </div>
     </Card>

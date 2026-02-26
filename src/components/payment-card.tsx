@@ -32,51 +32,52 @@ export function PaymentCard({
   return (
     <Card 
       className={cn(
-        "border-none shadow-lg rounded-2xl overflow-hidden fade-in bg-card flex flex-col sm:flex-row items-center p-6 gap-6",
+        "border-none shadow-2xl rounded-[2.5rem] overflow-hidden fade-in bg-card flex flex-col items-center p-8 sm:p-12 gap-10",
         className
       )}
       style={{ animationDelay: delay }}
     >
-      {/* QR Section */}
-      <div className="relative shrink-0 w-32 h-32 sm:w-40 sm:h-40 bg-white/5 rounded-xl border-2 border-dashed border-primary/20 flex items-center justify-center p-1">
+      {/* QR Section - significantly larger for better scanning */}
+      <div className="relative shrink-0 w-full max-w-[320px] aspect-square sm:max-w-[400px] bg-white rounded-3xl border-2 border-dashed border-primary/20 flex items-center justify-center p-4 shadow-inner">
         <Image
           src={qrUrl}
           alt={`${title} QR Code`}
-          width={200}
-          height={200}
-          className="rounded-lg object-contain w-full h-full drop-shadow-md"
+          width={500}
+          height={500}
+          className="rounded-xl object-contain w-full h-full"
           data-ai-hint="qr code"
+          priority
         />
       </div>
       
       {/* Info Section */}
-      <div className="flex-1 w-full space-y-4 text-left">
+      <div className="w-full space-y-6 text-center">
         <div>
-          <h3 className="text-xl font-bold tracking-tight text-foreground">
+          <h3 className="text-3xl font-bold tracking-tight text-foreground">
             {title}
           </h3>
           {subtitle && (
-            <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
+            <p className="text-lg text-muted-foreground font-medium mt-1">{subtitle}</p>
           )}
         </div>
 
-        <div className="grid grid-cols-1 gap-2 bg-background/50 p-4 rounded-xl border border-muted">
+        <div className="grid grid-cols-1 gap-4 bg-background/50 p-6 rounded-[2rem] border border-muted shadow-sm">
           {bankName && (
-            <div className="flex justify-between items-center text-sm border-b border-muted/50 pb-2">
-              <span className="text-muted-foreground">Banco</span>
-              <span className="font-semibold">{bankName}</span>
+            <div className="flex justify-between items-center text-base border-b border-muted/50 pb-3">
+              <span className="text-muted-foreground font-medium">Banco</span>
+              <span className="font-bold text-foreground">{bankName}</span>
             </div>
           )}
           {accountType && (
-            <div className="flex justify-between items-center text-sm border-b border-muted/50 pb-2">
-              <span className="text-muted-foreground">Tipo</span>
-              <span className="font-semibold">{accountType}</span>
+            <div className="flex justify-between items-center text-base border-b border-muted/50 pb-3">
+              <span className="text-muted-foreground font-medium">Tipo</span>
+              <span className="font-bold text-foreground">{accountType}</span>
             </div>
           )}
-          <div className="flex flex-col space-y-1 pt-1">
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">{accountLabel}</span>
-            <div className="flex items-center justify-between">
-              <span className="text-lg font-mono font-bold tracking-tighter text-foreground">{accountNumber}</span>
+          <div className="flex flex-col space-y-2 pt-2">
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-black">{accountLabel}</span>
+            <div className="flex items-center justify-between gap-4 bg-card/80 p-4 rounded-2xl border border-muted/30">
+              <span className="text-2xl font-mono font-black tracking-tighter text-foreground break-all text-left flex-1">{accountNumber}</span>
               <CopyButton value={accountNumber} />
             </div>
           </div>
