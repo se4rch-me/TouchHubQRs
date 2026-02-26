@@ -10,19 +10,19 @@
     --card-foreground: 0 0% 25%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 25%;
-    --primary: 0 0% 45%;
+    --primary: 188 10% 45%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96%;
+    --secondary: 188 10% 96%;
     --secondary-foreground: 0 0% 30%;
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 50%;
-    --accent: 0 0% 67%; /* Gris neutro de la marca */
+    --muted: 188 8% 95%;
+    --muted-foreground: 188 5% 50%;
+    --accent: 188 14% 67%; /* Color #A0B4B7 */
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 70%;
+    --border: 188 5% 90%;
+    --input: 188 5% 90%;
+    --ring: 188 14% 67%;
     --radius: 2rem;
   }
 }

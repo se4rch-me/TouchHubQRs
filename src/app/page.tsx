@@ -39,6 +39,7 @@ export default function Home() {
   const [currentYear, setCurrentYear] = useState<number | null>(null);
 
   useEffect(() => {
+    // Evitar errores de hidratación para el año del footer
     setCurrentYear(new Date().getFullYear());
   }, []);
 
