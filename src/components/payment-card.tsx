@@ -32,13 +32,13 @@ export function PaymentCard({
   return (
     <Card 
       className={cn(
-        "border-none shadow-2xl rounded-[2.5rem] overflow-hidden fade-in bg-card flex flex-col items-center p-8 sm:p-12 gap-10",
+        "border-none shadow-2xl rounded-[2.5rem] overflow-hidden fade-in bg-card flex flex-col items-center p-6 sm:p-12 gap-8 sm:gap-10",
         className
       )}
       style={{ animationDelay: delay }}
     >
       {/* QR Section - significantly larger for better scanning */}
-      <div className="relative shrink-0 w-full max-w-[320px] aspect-square sm:max-w-[400px] bg-white rounded-3xl border-2 border-dashed border-primary/20 flex items-center justify-center p-4 shadow-inner">
+      <div className="relative shrink-0 w-full max-w-[300px] aspect-square sm:max-w-[400px] bg-white rounded-3xl border-2 border-dashed border-primary/20 flex items-center justify-center p-4 shadow-inner">
         <Image
           src={qrUrl}
           alt={`${title} QR Code`}
@@ -53,15 +53,15 @@ export function PaymentCard({
       {/* Info Section */}
       <div className="w-full space-y-6 text-center">
         <div>
-          <h3 className="text-3xl font-bold tracking-tight text-foreground">
+          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
             {title}
           </h3>
           {subtitle && (
-            <p className="text-lg text-muted-foreground font-medium mt-1">{subtitle}</p>
+            <p className="text-base sm:text-lg text-muted-foreground font-medium mt-1">{subtitle}</p>
           )}
         </div>
 
-        <div className="grid grid-cols-1 gap-4 bg-background/50 p-6 rounded-[2rem] border border-muted shadow-sm">
+        <div className="grid grid-cols-1 gap-3 sm:gap-4 bg-background/50 p-4 sm:p-6 rounded-[2rem] border border-muted shadow-sm">
           {bankName && (
             <div className="flex justify-between items-center text-base border-b border-muted/50 pb-3">
               <span className="text-muted-foreground font-medium">Banco</span>
@@ -74,12 +74,14 @@ export function PaymentCard({
               <span className="font-bold text-foreground">{accountType}</span>
             </div>
           )}
-          <div className="flex flex-col space-y-2 pt-2">
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-black">{accountLabel}</span>
-            <div className="flex items-center justify-between gap-4 bg-card/80 p-4 rounded-2xl border border-muted/30">
-              <span className="text-xl sm:text-2xl font-mono font-black tracking-tighter text-foreground break-words text-left flex-1">
-                {accountNumber}
-              </span>
+          <div className="flex flex-col space-y-2 pt-2 text-left">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground font-black px-1">{accountLabel}</span>
+            <div className="flex items-center justify-between gap-3 bg-card/80 p-3 sm:p-4 rounded-2xl border border-muted/30 overflow-hidden">
+              <div className="flex-1 min-w-0">
+                <span className="text-lg sm:text-2xl font-mono font-black tracking-tighter text-foreground break-words block">
+                  {accountNumber}
+                </span>
+              </div>
               <CopyButton value={accountNumber} className="shrink-0" />
             </div>
           </div>
