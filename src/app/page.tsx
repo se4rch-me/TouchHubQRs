@@ -234,7 +234,7 @@ export default function Home() {
                 qrUrl: "/Wifi.png",
                 type: 'wifi',
                 infoLabel: 'center284',
-                accountLabel: 'Red WiFi'
+                accountLabel: 'Touch Center 5G'
               })} 
             />
           </div>
