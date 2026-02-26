@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -135,7 +136,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-6 md:p-12">
-      {/* Header Section */}
+      {/* Header Section - Texto eliminado por petición del usuario, solo queda el logo */}
       <header className="w-full max-w-4xl text-center mb-12 fade-in">
         <div className="flex justify-center">
           <div className="relative w-80 h-40">
@@ -147,10 +148,6 @@ export default function Home() {
               priority
             />
           </div>
-        </div>
-        <div className="mt-4 space-y-1">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground/90">Touch Center</h1>
-          <p className="text-lg text-muted-foreground font-medium">Punto de Atención y Pago</p>
         </div>
       </header>
 
