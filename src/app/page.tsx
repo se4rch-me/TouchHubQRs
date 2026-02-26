@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from "next/image";
 import { PaymentCard } from "@/components/payment-card";
 import { Button } from "@/components/ui/button";
@@ -36,6 +36,11 @@ interface ItemEntry {
 export default function Home() {
   const [view, setView] = useState<ViewState>('main');
   const [selectedItem, setSelectedItem] = useState<ItemEntry | null>(null);
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   const walletMethods: ItemEntry[] = [
     {
@@ -143,7 +148,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mt-4 space-y-1">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground">Touch Center</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-foreground/90">Touch Center</h1>
           <p className="text-lg text-muted-foreground font-medium">Punto de Atención y Pago</p>
         </div>
       </header>
@@ -160,7 +165,7 @@ export default function Home() {
             <ArrowLeft className="h-6 w-6" />
           </Button>
           <div>
-            <h2 className="text-2xl font-bold text-foreground">
+            <h2 className="text-2xl font-bold text-foreground/90">
               {view === 'wallets' && 'Billeteras Digitales'}
               {view === 'banks' && 'Cuentas Bancarias'}
               {view === 'social' && 'Nuestras Redes'}
@@ -277,7 +282,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-16 text-center text-muted-foreground/50 text-xs fade-in" style={{ animationDelay: '0.4s' }}>
-        <p>© {new Date().getFullYear()} Touch Center Hub • Servicios y Pagos</p>
+        <p>© {currentYear ?? '2024'} Touch Center Hub • Servicios y Pagos</p>
       </footer>
     </main>
   );
@@ -293,7 +298,7 @@ function MenuCard({ title, subtitle, icon, onClick, className }: { title: string
         {icon}
       </div>
       <div className="text-center">
-        <h2 className="text-2xl font-bold text-foreground/80 group-hover:text-foreground transition-colors">{title}</h2>
+        <h2 className="text-2xl font-bold text-foreground/70 group-hover:text-foreground/90 transition-colors">{title}</h2>
         <p className="text-muted-foreground mt-1 font-medium">{subtitle}</p>
       </div>
     </Card>
@@ -311,7 +316,7 @@ function ListEntryCard({ title, subtitle, icon, onClick }: { title: string, subt
           {icon}
         </div>
         <div>
-          <h3 className="text-xl font-bold text-foreground/80 group-hover:text-foreground transition-colors">{title}</h3>
+          <h3 className="text-xl font-bold text-foreground/70 group-hover:text-foreground/90 transition-colors">{title}</h3>
           <p className="text-sm text-muted-foreground font-medium">{subtitle}</p>
         </div>
       </div>
