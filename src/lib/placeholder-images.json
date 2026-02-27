@@ -9,43 +9,25 @@
     {
       "id": "qr-nequi",
       "description": "Nequi QR Code",
-      "imageUrl": "/qr-pago.png",
+      "imageUrl": "/Nequi-qr.png",
       "imageHint": "qr code"
     },
     {
       "id": "qr-daviplata",
       "description": "Daviplata QR Code",
-      "imageUrl": "/qr-pago.png",
+      "imageUrl": "/Daviplata-qr.png",
       "imageHint": "qr code"
     },
     {
-      "id": "qr-bank-elizabeth",
-      "description": "Bank Account QR Elizabeth",
-      "imageUrl": "/qr-pago.png",
-      "imageHint": "qr code"
-    },
-    {
-      "id": "qr-bank-cesar",
-      "description": "Bank Account QR Cesar",
-      "imageUrl": "/qr-pago.png",
+      "id": "qr-bancolombia",
+      "description": "Bancolombia QR Code",
+      "imageUrl": "/Bancolobia-qr.png",
       "imageHint": "qr code"
     },
     {
       "id": "qr-instagram",
       "description": "Instagram QR Code",
       "imageUrl": "/qr-instagram.png",
-      "imageHint": "qr code"
-    },
-    {
-      "id": "qr-facebook",
-      "description": "Facebook QR Code",
-      "imageUrl": "/qr-pago.png",
-      "imageHint": "qr code"
-    },
-    {
-      "id": "qr-whatsapp",
-      "description": "WhatsApp QR Code",
-      "imageUrl": "/qr-pago.png",
       "imageHint": "qr code"
     },
     {

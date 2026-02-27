@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -51,7 +50,7 @@ export default function Home() {
       title: 'Nequi',
       subtitle: 'Escanea para pagar con Nequi',
       accountNumber: '3114970176',
-      qrUrl: "/qr-pago.png",
+      qrUrl: "/Nequi-qr.png",
       type: 'payment',
       accountLabel: 'Número'
     },
@@ -60,7 +59,7 @@ export default function Home() {
       title: 'Daviplata',
       subtitle: 'Escanea para pagar con Daviplata',
       accountNumber: '3114970176',
-      qrUrl: "/qr-pago.png",
+      qrUrl: "/Daviplata-qr.png",
       type: 'payment',
       accountLabel: 'Número'
     }
@@ -73,8 +72,8 @@ export default function Home() {
       subtitle: 'Transferencia a Bancolombia',
       bankName: 'Bancolombia',
       accountType: 'Ahorros',
-      accountNumber: '123-456789-01',
-      qrUrl: "/qr-pago.png",
+      accountNumber: '0091455851',
+      qrUrl: "/Bancolobia-qr.png",
       type: 'payment',
       accountLabel: 'Número de Cuenta'
     },
@@ -100,15 +99,6 @@ export default function Home() {
       qrUrl: "/qr-instagram.png",
       type: 'social',
       accountLabel: 'Usuario'
-    },
-    {
-      id: 'facebook',
-      title: 'Facebook',
-      subtitle: 'Visita nuestro perfil',
-      infoLabel: 'Touch Center Oficial',
-      qrUrl: "/qr-pago.png",
-      type: 'social',
-      accountLabel: 'Perfil'
     },
     {
       id: 'whatsapp',
@@ -256,7 +246,6 @@ export default function Home() {
                 subtitle={m.subtitle} 
                 icon={
                   m.id === 'instagram' ? <Instagram size={28} /> : 
-                  m.id === 'facebook' ? <Facebook size={28} /> : 
                   <MessageCircle size={28} />
                 } 
                 onClick={() => handleSelectItem(m)} 
