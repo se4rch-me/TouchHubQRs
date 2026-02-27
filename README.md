@@ -1,6 +1,6 @@
 # Touch Center Payment Hub
 
-Esta aplicación está lista para ser desplegada en **GitHub Pages**.
+Esta aplicación está configurada para funcionar en **GitHub Pages**.
 
 ## Pasos para desplegar:
 
@@ -12,6 +12,15 @@ Esta aplicación está lista para ser desplegada en **GitHub Pages**.
 3. **Seleccionar Workflow**:
    - GitHub te sugerirá un workflow de **Next.js**. Haz clic en **Configure**.
    - Se creará un archivo `.github/workflows/nextjs.yml`. Haz clic en **Commit changes**.
-4. **Despliegue automático**: GitHub ejecutará el proceso de construcción y en pocos minutos tu sitio estará en vivo en `https://tu-usuario.github.io/tu-repo/`.
 
-**Nota importante:** Debido a que GitHub Pages es un host estático, las funciones de servidor (como Server Actions o integraciones de Genkit que requieran servidor) no funcionarán. Si necesitas esas funciones en el futuro, te recomendamos usar **Firebase App Hosting**.
+## Solución de errores comunes:
+
+### Error: Divergent Branches (al hacer pull)
+Si ves un error que dice "Need to specify how to reconcile divergent branches", ejecuta:
+```bash
+git config pull.rebase false
+git pull origin main
+```
+Luego podrás hacer tu `git commit` y `git push` normalmente.
+
+**Nota importante:** Debido a que GitHub Pages es un host estático, las funciones de servidor (como Server Actions o integraciones de Genkit que requieran servidor) no funcionarán.

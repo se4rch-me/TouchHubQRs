@@ -94,7 +94,7 @@ export default function Home() {
       title: 'WhatsApp',
       subtitle: 'Escríbenos directamente',
       infoLabel: '+57 3114970176',
-      qrUrl: "/qr-pago.png", // Usando qr-pago como placeholder si no hay uno específico
+      qrUrl: "/qr-pago.png",
       type: 'social',
       accountLabel: 'Contacto'
     }
@@ -123,7 +123,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-4 md:p-12 text-foreground">
-      {/* Header Section - Logo only as requested */}
       <header className="w-full max-w-4xl text-center mb-10 fade-in">
         <div className="flex justify-center">
           <div className="relative w-64 h-32 sm:w-80 sm:h-40">
@@ -138,7 +137,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Navigation and Title */}
       {view !== 'main' && (
         <div className="w-full max-w-2xl mb-8 flex items-center gap-4 fade-in px-2">
           <Button 
@@ -163,9 +161,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* Content Area */}
       <div className="w-full max-w-2xl">
-        {/* VIEW: MAIN MENU */}
         {view === 'main' && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 fade-in px-2">
             <MenuCard 
@@ -219,7 +215,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* VIEW: SUB-LISTS */}
         {(view === 'wallets' || view === 'banks' || view === 'social') && (
           <div className="grid grid-cols-1 gap-4 fade-in px-2">
             {view === 'wallets' && walletMethods.map((m) => (
@@ -243,7 +238,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* VIEW: DETAIL */}
         {view === 'detail' && selectedItem && (
           <div className="fade-in space-y-8 px-2">
             <PaymentCard
@@ -269,7 +263,6 @@ export default function Home() {
         )}
       </div>
 
-      {/* Footer */}
       <footer className="mt-16 text-center text-muted-foreground/60 text-xs sm:text-sm fade-in" style={{ animationDelay: '0.4s' }}>
         <p>© {currentYear ?? '2025'} Touch Center Hub • Servicios y Pagos</p>
       </footer>
