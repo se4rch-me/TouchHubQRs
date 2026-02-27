@@ -3,6 +3,8 @@ import type {NextConfig} from 'next';
 const nextConfig: NextConfig = {
   /* Configuración para GitHub Pages */
   output: 'export',
+  // El basePath debe coincidir con el nombre de tu repositorio en GitHub
+  basePath: '/TouchHubQRs',
   images: {
     unoptimized: true,
     remotePatterns: [
