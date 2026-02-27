@@ -76,17 +76,6 @@ export default function Home() {
       qrUrl: "/Bancolobia-qr.png",
       type: 'payment',
       accountLabel: 'Número de Cuenta'
-    },
-    {
-      id: 'davivienda',
-      title: 'Davivienda',
-      subtitle: 'Transferencia a Davivienda',
-      bankName: 'Davivienda',
-      accountType: 'Ahorros',
-      accountNumber: '987-654321-09',
-      qrUrl: "/qr-pago.png",
-      type: 'payment',
-      accountLabel: 'Número de Cuenta'
     }
   ];
 
@@ -105,7 +94,7 @@ export default function Home() {
       title: 'WhatsApp',
       subtitle: 'Escríbenos directamente',
       infoLabel: '+57 3114970176',
-      qrUrl: "/qr-pago.png",
+      qrUrl: "/qr-pago.png", // Usando qr-pago como placeholder si no hay uno específico
       type: 'social',
       accountLabel: 'Contacto'
     }
@@ -134,7 +123,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-background flex flex-col items-center justify-start p-4 md:p-12 text-foreground">
-      {/* Header Section - Logo only */}
+      {/* Header Section - Logo only as requested */}
       <header className="w-full max-w-4xl text-center mb-10 fade-in">
         <div className="flex justify-center">
           <div className="relative w-64 h-32 sm:w-80 sm:h-40">
@@ -142,7 +131,7 @@ export default function Home() {
               src="/logo.png"
               alt="Touch Center Logo"
               fill
-              className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.6)]"
+              className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.15)]"
               priority
             />
           </div>
@@ -282,7 +271,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-16 text-center text-muted-foreground/60 text-xs sm:text-sm fade-in" style={{ animationDelay: '0.4s' }}>
-        <p>© {currentYear ?? '2024'} Touch Center Hub • Servicios y Pagos</p>
+        <p>© {currentYear ?? '2025'} Touch Center Hub • Servicios y Pagos</p>
       </footer>
     </main>
   );
