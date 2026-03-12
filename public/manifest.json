@@ -1,0 +1,22 @@
+
+{
+  "name": "Touch Center Payment Hub",
+  "short_name": "Touch Hub",
+  "description": "Fast and secure payment point for Touch Center",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#A0B4B7",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

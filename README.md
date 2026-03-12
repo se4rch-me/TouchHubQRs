@@ -1,7 +1,15 @@
 
 # Touch Center Payment Hub
 
-Esta aplicación está configurada para funcionar en **GitHub Pages**.
+Esta aplicación está configurada para funcionar en **GitHub Pages** y como **PWA** (Progressive Web App).
+
+## Cómo usar sin Internet en tu iPad
+
+Para usar la aplicación en tu iPad sin depender de una conexión constante:
+1. Abre el sitio web publicado en Safari desde tu iPad (mientras tengas internet).
+2. Toca el botón de **Compartir** (el cuadrado con la flecha hacia arriba).
+3. Selecciona **"Añadir a la pantalla de inicio"** (Add to Home Screen).
+4. Se creará un icono de "Touch Hub" en tu iPad. Una vez hecho esto, podrás abrirla y ver los códigos QR incluso si no tienes conexión a internet.
 
 ## Solución al error de Git (Divergent Branches)
 
@@ -29,9 +37,9 @@ git push origin main
 
 2. **Activar el Workflow de Next.js**:
    - GitHub detectará que usas Next.js y te sugerirá un archivo de configuración. Haz clic en el botón **Configure**.
-   - Se abrirá un editor con un archivo llamado `.github/workflows/nextjs.yml`. No necesitas cambiar nada, solo haz clic en **Commit changes...** arriba a la derecha.
+   - Se abrirá un archivo llamado `.github/workflows/nextjs.yml`. Haz clic en **Commit changes...**.
 
 3. **Listo**:
-   - Cada vez que hagas un `git push` a la rama `main`, GitHub Actions construirá y publicará automáticamente tu sitio.
+   - Cada vez que hagas un `git push` a la rama `main`, se publicará automáticamente.
 
-**Nota técnica:** La aplicación usa `output: 'export'` en `next.config.ts` para generar archivos estáticos. Si ves errores de servidor en el Studio, recuerda que la previsualización local corre en el puerto **9002**.
+**Nota técnica:** La aplicación usa `output: 'export'` para generar archivos estáticos compatibles con cualquier servidor web básico.
