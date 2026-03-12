@@ -50,7 +50,7 @@ export default function Home() {
       title: 'Nequi',
       subtitle: 'Escanea para pagar con Nequi',
       accountNumber: '3114970176',
-      qrUrl: "/Nequi-qr.png",
+      qrUrl: "Nequi-qr.png",
       type: 'payment',
       accountLabel: 'Número'
     },
@@ -59,7 +59,7 @@ export default function Home() {
       title: 'Daviplata',
       subtitle: 'Escanea para pagar con Daviplata',
       accountNumber: '3114970176',
-      qrUrl: "/Daviplata-qr.png",
+      qrUrl: "Daviplata-qr.png",
       type: 'payment',
       accountLabel: 'Número'
     }
@@ -73,7 +73,7 @@ export default function Home() {
       bankName: 'Bancolombia',
       accountType: 'Ahorros',
       accountNumber: '0091455851',
-      qrUrl: "/Bancolobia-qr.png",
+      qrUrl: "Bancolobia-qr.png",
       type: 'payment',
       accountLabel: 'Número de Cuenta'
     }
@@ -85,7 +85,7 @@ export default function Home() {
       title: 'Instagram',
       subtitle: 'Síguenos en Instagram',
       infoLabel: 'touch_center284',
-      qrUrl: "/qr-instagram.png",
+      qrUrl: "qr-instagram.png",
       type: 'social',
       accountLabel: 'Usuario'
     },
@@ -94,7 +94,7 @@ export default function Home() {
       title: 'WhatsApp',
       subtitle: 'Escríbenos directamente',
       infoLabel: '+57 3114970176',
-      qrUrl: "/qr-pago.png",
+      qrUrl: "qr-pago.png",
       type: 'social',
       accountLabel: 'Contacto'
     }
@@ -127,7 +127,7 @@ export default function Home() {
         <div className="flex justify-center">
           <div className="relative w-64 h-32 sm:w-80 sm:h-40">
             <Image
-              src="/logo.png"
+              src="logo.png"
               alt="Touch Center Logo"
               fill
               className="object-contain drop-shadow-[0_15px_25px_rgba(0,0,0,0.15)]"
@@ -190,7 +190,7 @@ export default function Home() {
                 id: 'google-rate',
                 title: 'Calificarnos en Google',
                 subtitle: 'Tu opinión es muy importante',
-                qrUrl: "/touchShare.png",
+                qrUrl: "touchShare.png",
                 type: 'rate',
                 infoLabel: 'Opiniones',
                 accountLabel: 'Puntuar',
@@ -206,7 +206,7 @@ export default function Home() {
                 id: 'wifi-connect',
                 title: 'Conectar al WiFi',
                 subtitle: 'Escanea para conectarte',
-                qrUrl: "/Wifi.png",
+                qrUrl: "Wifi.png",
                 type: 'wifi',
                 infoLabel: 'center284',
                 accountLabel: 'Touch Center 5G'
