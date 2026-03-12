@@ -1,3 +1,4 @@
+
 # Touch Center Payment Hub
 
 Esta aplicación está configurada para funcionar en **GitHub Pages**.
@@ -33,4 +34,4 @@ git push origin main
 3. **Listo**:
    - Cada vez que hagas un `git push` a la rama `main`, GitHub Actions construirá y publicará automáticamente tu sitio.
 
-**Nota técnica:** La aplicación usa `output: 'export'` en `next.config.ts` para generar archivos estáticos, lo cual es ideal para GitHub Pages.
+**Nota técnica:** La aplicación usa `output: 'export'` en `next.config.ts` para generar archivos estáticos. Si ves errores de servidor en el Studio, recuerda que la previsualización local corre en el puerto **9002**.
