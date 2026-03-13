@@ -73,10 +73,10 @@ export default function Home() {
       subtitle: 'Transferencia a Bancolombia',
       bankName: 'Bancolombia',
       accountType: 'Ahorros',
-      accountNumber: '0091455851',
+      accountNumber: '0091455851\n@jesus8568',
       qrUrl: "Bancolobia-qr.png",
       type: 'payment',
-      accountLabel: 'Número de Cuenta'
+      accountLabel: 'Cuenta / Llave'
     }
   ];
 
@@ -91,11 +91,20 @@ export default function Home() {
       accountLabel: 'Usuario'
     },
     {
+      id: 'facebook',
+      title: 'Facebook',
+      subtitle: 'Visítanos en Facebook',
+      infoLabel: 'Touch Center',
+      qrUrl: "FacebooklQR.png",
+      type: 'social',
+      accountLabel: 'Página'
+    },
+    {
       id: 'whatsapp',
       title: 'WhatsApp',
       subtitle: 'Escríbenos directamente',
       infoLabel: '+57 3114970176',
-      qrUrl: "qr-pago.png",
+      qrUrl: "WhatsappQR.png",
       type: 'social',
       accountLabel: 'Contacto'
     }
@@ -231,6 +240,7 @@ export default function Home() {
                 subtitle={m.subtitle} 
                 icon={
                   m.id === 'instagram' ? <Instagram size={28} /> : 
+                  m.id === 'facebook' ? <Facebook size={28} /> :
                   <MessageCircle size={28} />
                 } 
                 onClick={() => handleSelectItem(m)} 

@@ -31,6 +31,18 @@
       "imageHint": "qr code"
     },
     {
+      "id": "qr-facebook",
+      "description": "Facebook QR Code",
+      "imageUrl": "/FacebooklQR.png",
+      "imageHint": "qr code"
+    },
+    {
+      "id": "qr-whatsapp",
+      "description": "WhatsApp QR Code",
+      "imageUrl": "/WhatsappQR.png",
+      "imageHint": "qr code"
+    },
+    {
       "id": "qr-google",
       "description": "Google Review QR Code",
       "imageUrl": "/touchShare.png",

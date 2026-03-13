@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -34,6 +35,9 @@ export function PaymentCard({
   actionUrl,
   actionLabel = "Ir",
 }: PaymentCardProps) {
+  // Split account numbers if they contain a newline
+  const accountLines = accountNumber.split('\n');
+
   return (
     <Card 
       className={cn(
@@ -42,7 +46,7 @@ export function PaymentCard({
       )}
       style={{ animationDelay: delay }}
     >
-      {/* QR Section - significantly larger for better scanning */}
+      {/* QR Section */}
       <div className="relative shrink-0 w-full max-w-[300px] aspect-square sm:max-w-[400px] bg-white rounded-3xl border-2 border-dashed border-primary/20 flex items-center justify-center p-4 shadow-inner">
         <Image
           src={qrUrl}
@@ -79,26 +83,32 @@ export function PaymentCard({
               <span className="font-bold text-foreground">{accountType}</span>
             </div>
           )}
-          <div className="flex flex-col space-y-2 pt-2 text-left">
-            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground font-black px-1">{accountLabel}</span>
-            <div className="flex items-center justify-between gap-3 bg-card/80 p-3 sm:p-4 rounded-2xl border border-muted/30 overflow-hidden">
-              <div className="flex-1 min-w-0">
-                <span className="text-lg sm:text-2xl font-mono font-black tracking-tighter text-foreground break-words block">
-                  {accountNumber}
-                </span>
+          
+          <div className="flex flex-col space-y-4 pt-2 text-left">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-muted-foreground font-black px-1">
+              {accountLabel}
+            </span>
+            
+            {accountLines.map((line, index) => (
+              <div key={index} className="flex items-center justify-between gap-3 bg-card/80 p-3 sm:p-4 rounded-2xl border border-muted/30 overflow-hidden">
+                <div className="flex-1 min-w-0">
+                  <span className="text-lg sm:text-xl font-mono font-black tracking-tight text-foreground break-words block leading-none">
+                    {line}
+                  </span>
+                </div>
+                {actionUrl && index === 0 ? (
+                  <Button 
+                    onClick={() => window.open(actionUrl, '_blank')}
+                    className="shrink-0 h-8 px-4 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 gap-2"
+                  >
+                    <ExternalLink className="h-3 w-3" />
+                    <span className="text-xs font-medium">{actionLabel}</span>
+                  </Button>
+                ) : (
+                  <CopyButton value={line} className="shrink-0" />
+                )}
               </div>
-              {actionUrl ? (
-                <Button 
-                  onClick={() => window.open(actionUrl, '_blank')}
-                  className="shrink-0 h-8 px-4 rounded-full bg-accent text-accent-foreground hover:bg-accent/90 gap-2"
-                >
-                  <ExternalLink className="h-3 w-3" />
-                  <span className="text-xs font-medium">{actionLabel}</span>
-                </Button>
-              ) : (
-                <CopyButton value={accountNumber} className="shrink-0" />
-              )}
-            </div>
+            ))}
           </div>
         </div>
       </div>
