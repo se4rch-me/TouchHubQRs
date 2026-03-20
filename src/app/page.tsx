@@ -218,7 +218,7 @@ export default function Home() {
                 subtitle: 'Escanea para conectarte',
                 qrUrl: "Wifi.png",
                 type: 'wifi',
-                infoLabel: 'center284',
+                infoLabel: 'teamtc26',
                 accountLabel: 'Touch Center 5G'
               })} 
             />
