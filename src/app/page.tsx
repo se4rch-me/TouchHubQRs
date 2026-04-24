@@ -17,10 +17,11 @@ import {
   Wifi, 
   Instagram, 
   Facebook, 
-  MessageCircle 
+  MessageCircle,
+  Headphones
 } from "lucide-react";
 
-type ViewState = 'main' | 'wallets' | 'banks' | 'social' | 'rate' | 'wifi' | 'detail';
+type ViewState = 'main' | 'wallets' | 'banks' | 'social' | 'rate' | 'wifi' | 'help-desk' | 'detail';
 
 interface ItemEntry {
   id: string;
@@ -30,7 +31,7 @@ interface ItemEntry {
   qrUrl: string;
   bankName?: string;
   accountType?: string;
-  type: 'payment' | 'social' | 'wifi' | 'rate';
+  type: 'payment' | 'social' | 'wifi' | 'rate' | 'help-desk';
   infoLabel?: string;
   accountLabel?: string;
   redirectUrl?: string;
@@ -110,6 +111,19 @@ export default function Home() {
     }
   ];
 
+  const helpDeskMethods: ItemEntry[] = [
+    {
+      id: 'device-intake',
+      title: 'Ingreso de Dispositivo',
+      subtitle: 'Registra un nuevo dispositivo',
+      infoLabel: 'Mesa de Ayuda',
+      qrUrl: "ClienteForm.png",
+      type: 'help-desk',
+      accountLabel: 'Formulario',
+      redirectUrl: 'https://script.google.com/a/macros/touchcenter.co/s/AKfycbzcnO90dXXRAO0lby2olfZfI8rLZt_09SVAyaaPdcgfIGqS3dxlxry12AJwBY8yKL9v/exec?page=cliente'
+    }
+  ];
+
   const handleSelectItem = (item: ItemEntry) => {
     setSelectedItem(item);
     setView('detail');
@@ -122,6 +136,8 @@ export default function Home() {
         setView(isWallet ? 'wallets' : 'banks');
       } else if (selectedItem.type === 'social') {
         setView('social');
+      } else if (selectedItem.type === 'help-desk') {
+        setView('help-desk');
       } else {
         setView('main');
       }
@@ -162,6 +178,7 @@ export default function Home() {
               {view === 'wallets' && 'Billeteras Digitales'}
               {view === 'banks' && 'Cuentas Bancarias'}
               {view === 'social' && 'Nuestras Redes'}
+              {view === 'help-desk' && 'Mesa de Ayuda'}
               {view === 'detail' && selectedItem?.title}
             </h2>
             <p className="text-xs sm:text-sm text-muted-foreground font-medium">
@@ -191,6 +208,27 @@ export default function Home() {
               subtitle="Contáctanos" 
               icon={<Share2 size={40} />} 
               onClick={() => setView('social')} 
+            />
+            <MenuCard 
+              title="Ingreso" 
+              subtitle="Mesa de Ayuda" 
+              icon={<Headphones size={40} />} 
+              onClick={() => setView('help-desk')} 
+            />
+            <MenuCard 
+              title="Ingresos AlejoMac" 
+              subtitle="Asociado" 
+              icon={<Headphones size={40} />} 
+              onClick={() => handleSelectItem({
+                id: 'alejo-intake',
+                title: 'Ingresos AlejoMac',
+                subtitle: 'Registra un nuevo dispositivo',
+                infoLabel: 'AlejoMac Support',
+                qrUrl: "ClienteForm_Alejo.png",
+                type: 'help-desk',
+                accountLabel: 'Formulario',
+                redirectUrl: 'https://script.google.com/a/macros/touchcenter.co/s/AKfycbzcnO90dXXRAO0lby2olfZfI8rLZt_09SVAyaaPdcgfIGqS3dxlxry12AJwBY8yKL9v/exec?page=cliente'
+              })} 
             />
             <MenuCard 
               title="Calificarnos" 
@@ -225,7 +263,7 @@ export default function Home() {
           </div>
         )}
 
-        {(view === 'wallets' || view === 'banks' || view === 'social') && (
+        {(view === 'wallets' || view === 'banks' || view === 'social' || view === 'help-desk') && (
           <div className="grid grid-cols-1 gap-4 fade-in px-2">
             {view === 'wallets' && walletMethods.map((m) => (
               <ListEntryCard key={m.id} title={m.title} subtitle={m.subtitle} icon={<Phone size={28} />} onClick={() => handleSelectItem(m)} />
@@ -245,6 +283,9 @@ export default function Home() {
                 } 
                 onClick={() => handleSelectItem(m)} 
               />
+            ))}
+            {view === 'help-desk' && helpDeskMethods.map((m) => (
+              <ListEntryCard key={m.id} title={m.title} subtitle={m.subtitle} icon={<Headphones size={28} />} onClick={() => handleSelectItem(m)} />
             ))}
           </div>
         )}
@@ -268,6 +309,7 @@ export default function Home() {
                 {selectedItem.type === 'social' && "¡Síguenos y entérate de nuestras promociones!"}
                 {selectedItem.type === 'rate' && "Tu opinión nos ayuda a brindarte un mejor servicio."}
                 {selectedItem.type === 'wifi' && "Solicita ayuda si tienes inconvenientes al conectar."}
+                {selectedItem.type === 'help-desk' && "Completa el formulario para registrar tu dispositivo en nuestra mesa de ayuda."}
               </p>
             </div>
           </div>
