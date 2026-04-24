@@ -137,7 +137,7 @@ export default function Home() {
       } else if (selectedItem.type === 'social') {
         setView('social');
       } else if (selectedItem.type === 'help-desk') {
-        setView('help-desk');
+        setView('main');
       } else {
         setView('main');
       }
@@ -210,27 +210,6 @@ export default function Home() {
               onClick={() => setView('social')} 
             />
             <MenuCard 
-              title="Ingreso" 
-              subtitle="Mesa de Ayuda" 
-              icon={<Headphones size={40} />} 
-              onClick={() => setView('help-desk')} 
-            />
-            <MenuCard 
-              title="Ingresos AlejoMac" 
-              subtitle="Asociado" 
-              icon={<Headphones size={40} />} 
-              onClick={() => handleSelectItem({
-                id: 'alejo-intake',
-                title: 'Ingresos AlejoMac',
-                subtitle: 'Registra un nuevo dispositivo',
-                infoLabel: 'AlejoMac Support',
-                qrUrl: "ClienteForm_Alejo.png",
-                type: 'help-desk',
-                accountLabel: 'Formulario',
-                redirectUrl: 'https://script.google.com/a/macros/touchcenter.co/s/AKfycbzcnO90dXXRAO0lby2olfZfI8rLZt_09SVAyaaPdcgfIGqS3dxlxry12AJwBY8yKL9v/exec?page=cliente'
-              })} 
-            />
-            <MenuCard 
               title="Calificarnos" 
               subtitle="Danos 5 estrellas" 
               icon={<Star size={40} />} 
@@ -244,6 +223,13 @@ export default function Home() {
                 accountLabel: 'Puntuar',
                 redirectUrl: 'https://www.google.com/search?sca_esv=4743879a97d795b6&q=opiniones+de+touchcenter&uds=ALYpb_kH5N_kfrB-KsEDOaDf3REQS_SDa6jCnm7uV6ILGyPSXnmxSdBJAbJBE9m3em0etOvQgDtWXWGRj8nGrTguwalEMSwL_f-QBW1a9Daour5SvZt9WXK-UM8gZCtrXSQaEcOlwrrQzb97tZkblgJLK0naPqmg4a2nJty74R3HPGsf42aCZrnk7Bgmi85lDgmqR2ecQIVso5BWFwSIwB3HJyxQJCQMdFLVXKjcKtwJF-6_ESR6vA8d7xspWlK4wuvpE_0WUm-uDgbJSwQBaFdiirl_pobhz3uULEjwp_szewIHmz4XI8ZmFu3wP3Iw-lLbZToQnufAvynl73bWW4u4ck7mohlaEG3DFtCH-bh_Hr-iqF5aEvtxgZmFE5uVVtJmTZWRA7zwg_STtFnOd2nY6lr3Xh6YBpl40WiEB8N01-ZV1rPefEk&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOZDEKSgCV8e2CxGyNbpXVn5ydgJ-K6_MF9nbat174rM4XlkM7dgn_225G-3_aMD-WAkSSgiixqwLiBEdLHayUS_qHbmkWYW7KHkfDTaSO-vUWLC__g%3D%3D&sa=X&ved=2ahUKEwi-mLfl1PWSAxWvVzABHakLJM4Qk8gLegQIFhAB&ictx=1&biw=384&bih=693&dpr=1.88'
               })} 
+            />
+            <MenuCard 
+              title="Ingreso" 
+              subtitle="Mesa de Ayuda" 
+              icon={<Headphones size={40} />} 
+              className="sm:col-span-2"
+              onClick={() => handleSelectItem(helpDeskMethods[0])} 
             />
             <MenuCard 
               title="Conectar WiFi" 
@@ -263,7 +249,7 @@ export default function Home() {
           </div>
         )}
 
-        {(view === 'wallets' || view === 'banks' || view === 'social' || view === 'help-desk') && (
+        {(view === 'wallets' || view === 'banks' || view === 'social') && (
           <div className="grid grid-cols-1 gap-4 fade-in px-2">
             {view === 'wallets' && walletMethods.map((m) => (
               <ListEntryCard key={m.id} title={m.title} subtitle={m.subtitle} icon={<Phone size={28} />} onClick={() => handleSelectItem(m)} />
@@ -284,9 +270,7 @@ export default function Home() {
                 onClick={() => handleSelectItem(m)} 
               />
             ))}
-            {view === 'help-desk' && helpDeskMethods.map((m) => (
-              <ListEntryCard key={m.id} title={m.title} subtitle={m.subtitle} icon={<Headphones size={28} />} onClick={() => handleSelectItem(m)} />
-            ))}
+            
           </div>
         )}
 
@@ -301,6 +285,7 @@ export default function Home() {
               bankName={selectedItem.bankName}
               accountType={selectedItem.accountType}
               actionUrl={selectedItem.redirectUrl}
+              actionLabel={selectedItem.type === 'help-desk' ? 'Abrir' : 'Ir'}
               className="w-full"
             />
             <div className="bg-muted/40 border border-muted p-6 rounded-[2rem] text-center shadow-sm">
@@ -309,7 +294,7 @@ export default function Home() {
                 {selectedItem.type === 'social' && "¡Síguenos y entérate de nuestras promociones!"}
                 {selectedItem.type === 'rate' && "Tu opinión nos ayuda a brindarte un mejor servicio."}
                 {selectedItem.type === 'wifi' && "Solicita ayuda si tienes inconvenientes al conectar."}
-                {selectedItem.type === 'help-desk' && "Completa el formulario para registrar tu dispositivo en nuestra mesa de ayuda."}
+                {selectedItem.type === 'help-desk' && "Escanea el código QR o haz clic en Abrir para registrar tu dispositivo."}
               </p>
             </div>
           </div>
